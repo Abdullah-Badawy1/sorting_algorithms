@@ -1,8 +1,8 @@
 #include "sort.h"
 
 /**
-* insertion_sort_list -
-* Sorts a linked list using the insertion sort algorithm.
+* insertion_sort_list -Sorts a linked list using
+* the insertion sort algorithm.
 * @list: Linked list to be sorted.
 */
 void insertion_sort_list(listint_t **list)
