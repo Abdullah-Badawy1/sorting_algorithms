@@ -9,13 +9,15 @@
  * @first: initial position
  * @mid: middle position
  */
-void print_left_right(int *array, int size, int first, int mid) {
+void print_left_right(int *array, int size, int first, int mid)
+{
 	int k;
 
 	printf("Merging...\n");
 	printf("[left]: ");
 	k = first;
-	while (k < mid) {
+	while (k < mid)
+	{
 		if (k != mid - 1)
 			printf("%d, ", array[k]);
 		else
@@ -25,7 +27,8 @@ void print_left_right(int *array, int size, int first, int mid) {
 
 	printf("[right]: ");
 	k = mid;
-	while (k < size) {
+	while (k < size)
+	{
 		if (k < size - 1)
 			printf("%d, ", array[k]);
 		else
@@ -43,7 +46,8 @@ void print_left_right(int *array, int size, int first, int mid) {
  * @mid: middle position
  * first one of the second array
  */
-void merge(int *array, int size, int first, int mid, int *cpy) {
+void merge(int *array, int size, int first, int mid, int *cpy)
+{
 	int i, j, k;
 
 	print_left_right(array, size, first, mid);
@@ -53,11 +57,15 @@ void merge(int *array, int size, int first, int mid, int *cpy) {
 
 	printf("[Done]: ");
 	k = first;
-	while (k < size) {
-		if (i < mid && (j >= size || array[i] <= array[j])) {
+	while (k < size)
+	{
+		if (i < mid && (j >= size || array[i] <= array[j]))
+		{
 			cpy[k] = array[i];
 			i++;
-		} else {
+		}
+		else
+		{
 			cpy[k] = array[j];
 			j++;
 		}
@@ -76,7 +84,8 @@ void merge(int *array, int size, int first, int mid, int *cpy) {
  * @size: size of the original  array
  * @array: the original array
  */
-void mergeSort(int *cpy, int first, int size, int *array) {
+void mergeSort(int *cpy, int first, int size, int *array)
+{
 	int mid;
 
 	if (size - first < 2)
@@ -96,7 +105,8 @@ void mergeSort(int *cpy, int first, int size, int *array) {
  * @cpy: array dest
  * @size : array size
  */
-void copy_array(int *arr, int *cpy, int size) {
+void copy_array(int *arr, int *cpy, int size)
+{
 	int i;
 
 	for (i = 0; i < (int)size; i++)
@@ -108,7 +118,8 @@ void copy_array(int *arr, int *cpy, int size) {
  * @array: array
  * @size : array size
  */
-void merge_sort(int *array, size_t size) {
+void merge_sort(int *array, size_t size)
+{
 	int *cpy;
 
 	cpy = malloc(sizeof(int) * size - 1);
